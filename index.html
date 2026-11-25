@@ -4,6 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Japhet John Ruzige | Pharmaceutical Technician</title>
+  <meta
+    name="description"
+    content="Japhet John Ruzige is a licensed Pharmaceutical Technician in Tanzania specializing in clinical dispensing, medication safety, cold-chain management, and health supply-chain operations."
+  />
+  <meta name="author" content="Japhet John Ruzige" />
+
+  <!-- Open Graph / Social Preview -->
+  <meta property="og:title" content="Japhet John Ruzige | Pharmaceutical Technician" />
+  <meta property="og:description" content="Pharmaceutical Technician improving medication safety and health supply-chain reliability across hospitals, pharmacies, and humanitarian programs in Tanzania." />
+  <meta property="og:image" content="https://japhetruzige.github.io/japhetruzige.github.io-/social-preview.jpg" />
+  <meta property="og:url" content="https://japhetruzige.github.io/japhetruzige.github.io-/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
   <style>
     :root {
       --bg: #f8fafc;
@@ -40,6 +56,11 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 3px;
+    }
+
     a {
       color: var(--primary);
       text-decoration: none;
@@ -51,18 +72,38 @@
       text-decoration: underline;
     }
 
+    /* Skip Link */
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 16px;
+      background: var(--primary-dark);
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 8px;
+      font-weight: 600;
+      z-index: 999;
+      transition: top 0.15s ease;
+    }
+
+    .skip-link:focus {
+      top: 14px;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
     .container {
       max-width: 1080px;
       margin: 0 auto;
       padding: 0 24px;
     }
 
-    /* Navigation */
+    /* Header & Responsive Navigation */
     header {
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -71,8 +112,9 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      height: 68px;
-      gap: 20px;
+      min-height: 68px;
+      gap: 16px;
+      flex-wrap: wrap;
     }
 
     .brand {
@@ -80,25 +122,51 @@
       font-size: 1.05rem;
       color: var(--text);
       letter-spacing: -0.01em;
-      white-space: nowrap;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 10px 16px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .menu-toggle:hover {
+      background: var(--surface-alt);
     }
 
     nav {
       display: flex;
-      gap: 22px;
-      overflow-x: auto;
-      padding: 4px 0;
+      align-items: center;
+      gap: 8px;
     }
 
     nav a {
-      font-size: 0.9rem;
+      min-height: 44px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 0.92rem;
       font-weight: 500;
       color: var(--muted);
-      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
     }
 
-    nav a:hover {
-      color: var(--primary);
+    nav a:hover,
+    nav a[aria-current="page"] {
+      color: var(--primary-dark);
+      background: var(--primary-soft);
       text-decoration: none;
     }
 
@@ -136,26 +204,21 @@
       line-height: 1.15;
       letter-spacing: -0.025em;
       color: var(--text);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
     }
 
     .subtitle {
-      font-size: 1.18rem;
+      font-size: 1.16rem;
       font-weight: 600;
-      color: var(--primary);
-      margin-bottom: 4px;
+      color: var(--primary-dark);
+      max-width: 700px;
+      margin-bottom: 8px;
+      line-height: 1.45;
     }
 
     .affiliation {
-      font-size: 0.96rem;
+      font-size: 0.95rem;
       color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    .lead {
-      font-size: 1.03rem;
-      color: var(--text-secondary);
-      max-width: 710px;
       margin-bottom: 24px;
     }
 
@@ -169,7 +232,9 @@
     .btn {
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
+      min-height: 46px;
       padding: 12px 20px;
       border-radius: 10px;
       font-weight: 600;
@@ -268,7 +333,7 @@
     }
 
     .section-head {
-      max-width: 680px;
+      max-width: 700px;
       margin-bottom: 32px;
     }
 
@@ -289,12 +354,6 @@
     .grid-2 {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 22px;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 22px;
     }
 
@@ -327,25 +386,73 @@
       color: var(--text-secondary);
     }
 
-    /* Pills for Toolkit */
     .pill-group {
       display: flex;
       flex-wrap: wrap;
       gap: 8px;
-      margin-top: 12px;
+      margin-top: 14px;
     }
 
     .pill {
       background: var(--surface-alt);
       border: 1px solid var(--border);
       color: var(--text);
-      font-size: 0.85rem;
+      font-size: 0.84rem;
       font-weight: 500;
-      padding: 6px 12px;
+      padding: 5px 11px;
       border-radius: 8px;
     }
 
-    /* Experience Timeline */
+    /* Case Studies */
+    .case-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .case-study {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .case-study h3 {
+      font-size: 1.18rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .case-study-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .case-col {
+      background: var(--surface-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px;
+    }
+
+    .case-col h4 {
+      font-size: 0.84rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--primary-dark);
+      margin-bottom: 8px;
+    }
+
+    .case-col p {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+    }
+
+    /* Experience Timeline (Context, Responsibility, Outcome, Tools) */
     .timeline {
       display: flex;
       flex-direction: column;
@@ -392,8 +499,8 @@
       margin-bottom: 14px;
     }
 
-    .role-summary {
-      font-size: 0.95rem;
+    .role-context {
+      font-size: 0.94rem;
       color: var(--text-secondary);
       margin-bottom: 14px;
     }
@@ -403,6 +510,7 @@
       display: flex;
       flex-direction: column;
       gap: 8px;
+      margin-bottom: 16px;
     }
 
     .role-bullets li {
@@ -414,7 +522,22 @@
       color: var(--text);
     }
 
-    /* Education & Credentials */
+    .role-tools {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .role-tools strong {
+      color: var(--text);
+    }
+
+    /* Credentials */
     .cred-list {
       display: flex;
       flex-direction: column;
@@ -444,31 +567,57 @@
     }
 
     .cert-link {
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
       margin-top: 4px;
-      font-size: 0.84rem;
+      font-size: 0.86rem;
       font-weight: 600;
     }
 
-    /* References Banner */
-    .ref-banner {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
+    /* Endorsement Card */
+    .endorsement-box {
+      margin-top: 24px;
       background: var(--surface);
       border: 1px solid var(--border);
       border-left: 4px solid var(--primary);
       border-radius: var(--radius);
-      padding: 22px 26px;
+      padding: 28px;
       box-shadow: var(--shadow-sm);
     }
 
-    .ref-banner p {
-      font-size: 0.96rem;
+    .endorsement-quote {
+      font-size: 0.98rem;
       color: var(--text-secondary);
-      max-width: 680px;
+      font-style: italic;
+      line-height: 1.75;
+      margin-bottom: 16px;
+    }
+
+    .endorsement-meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+    }
+
+    .endorsement-author strong {
+      display: block;
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    .endorsement-author span {
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .endorsement-note {
+      font-size: 0.84rem;
+      color: var(--muted);
     }
 
     /* Contact */
@@ -511,6 +660,28 @@
     }
 
     @media (max-width: 860px) {
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 8px 0 16px;
+        border-top: 1px solid var(--border);
+      }
+
+      nav.is-open {
+        display: flex;
+      }
+
+      nav a {
+        width: 100%;
+        padding: 12px 14px;
+      }
+
       .hero-grid {
         grid-template-columns: 1fr;
       }
@@ -520,11 +691,10 @@
         height: 140px;
       }
 
-      .metrics-bar {
-        grid-template-columns: 1fr;
-      }
-
-      .grid-2, .grid-3, .contact-grid {
+      .metrics-bar,
+      .grid-2,
+      .case-study-grid,
+      .contact-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -532,313 +702,435 @@
 </head>
 <body>
 
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
   <header>
     <div class="container nav-inner">
-      <a href="#home" class="brand">Japhet John Ruzige</a>
-      <nav aria-label="Primary Navigation">
-        <a href="#home">About</a>
-        <a href="#expertise">Expertise</a>
-        <a href="#toolkit">Toolkit</a>
+      <a href="#about" class="brand">Japhet John Ruzige</a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="primary-navigation"
+      >
+        Menu
+      </button>
+      <nav id="primary-navigation" aria-label="Primary navigation">
+        <a href="#about" aria-current="page">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#case-studies">Case Studies</a>
         <a href="#experience">Experience</a>
         <a href="#credentials">Credentials</a>
-        <a href="#contact">Get in Touch</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- ABOUT / HERO -->
-  <section id="home" class="hero">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">Licensed Pharmaceutical Technician &bull; Hospital, NGO &amp; Community Pharmacy</div>
-        <h1>Japhet John Ruzige</h1>
-        <div class="subtitle">Pharmaceutical Technician &mdash; Clinical Dispensing &amp; Health Supply Chain</div>
-        <div class="affiliation">Sumbawanga Regional Referral Hospital, Ministry of Health &bull; Sumbawanga, Rukwa, Tanzania</div>
-        <p class="lead">
-          Pharmaceutical Technician practicing across referral hospital pharmacy, humanitarian NGO logistics, and retail pharmacy operations. Focused on safe medication dispensing and extemporaneous compounding, accurate inventory and Average Monthly Consumption (AMC) planning, cold-chain and storage-room monitoring, patient education, and mentoring pharmacy interns and junior staff.
-        </p>
-
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">How to Get in Touch</a>
-          <a href="Japhet_Ruzige_CV.pdf" class="btn btn-secondary" download>Download CV (PDF)</a>
-        </div>
-
-        <div class="metrics-bar">
-          <div class="metric-box">
-            <div class="metric-num">&gt;97%</div>
-            <div class="metric-label">Commodity accuracy in monthly audits</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-num">~500/wk</div>
-            <div class="metric-label">Patients served at referral level</div>
-          </div>
-          <div class="metric-box">
-            <div class="metric-num">~40</div>
-            <div class="metric-label">Interns &amp; junior staff mentored</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="photo-frame">
-        <img src="photo.jpg" alt="Japhet John Ruzige" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Upload <strong>photo.jpg</strong><br/>to display portrait</span>';" />
-      </div>
-    </div>
-  </section>
-
-  <!-- AREAS OF EXPERTISE -->
-  <section id="expertise">
-    <div class="container">
-      <div class="section-head">
-        <h2>Areas of Practice &amp; Impact</h2>
-        <p>Delivering safe, patient-centered pharmaceutical care alongside disciplined health commodity management.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <div class="card-kicker">Clinical Pharmacy</div>
-          <h3>Prescription Verification, Dispensing &amp; Counselling</h3>
-          <p>
-            Reviewing lawful prescriptions for clinical appropriateness, dosage accuracy, and shelf life; compounding extemporaneous preparations when ordered; and empowering patients with clear adherence counselling across outpatient, inpatient, and chronic care (CTC/ART/PEP/PrEP) clinics.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-kicker">Health Logistics</div>
-          <h3>Inventory Control, AMC Forecasting &amp; MSD Requisition</h3>
-          <p>
-            Preventing stock-outs and minimizing wastage through Average Monthly Consumption (AMC) analysis, eLMIS/LMIS reporting, timely Medical Stores Department (MSD) ordering, strict FEFO/FIFO stock rotation, and physical security over controlled medicines.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-kicker">Quality &amp; Patient Safety</div>
-          <h3>Cold-Chain Integrity, Pharmacovigilance &amp; IPC</h3>
-          <p>
-            Safeguarding temperature-sensitive vaccines and biologics through continuous cold-chain monitoring, inspecting pharmaceuticals and consumables for storage compliance, documenting pharmacovigilance reports, and upholding hospital infection prevention standards.
-          </p>
-        </div>
-
-        <div class="card">
-          <div class="card-kicker">Leadership &amp; Capacity Building</div>
-          <h3>Mentorship &amp; Pharmacy Operations Supervision</h3>
-          <p>
-            Training and supervising pharmacy interns, junior technicians, and support staff in accurate dispensing workflows, stock reconciliation, insurance claims processing, and standard operating procedures.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SYSTEMS & TOOLKIT -->
-  <section id="toolkit">
-    <div class="container">
-      <div class="section-head">
-        <h2>Systems, Guidelines &amp; Professional Toolkit</h2>
-        <p>Digital health platforms, national clinical standards, and analytical tools used daily.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Health Information &amp; Logistics Systems</h3>
-          <p>Hands-on operational proficiency in electronic hospital dispensing, HIV care databases, and national supply chain reporting:</p>
-          <div class="pill-group">
-            <span class="pill">AfyaeHMS</span>
-            <span class="pill">eLMIS</span>
-            <span class="pill">CTC2 Database</span>
-            <span class="pill">CTC Analytics</span>
-            <span class="pill">Pharmacovigilance Reporting</span>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Clinical Standards &amp; Office Productivity</h3>
-          <p>Grounded in Tanzanian regulatory treatment protocols and data-driven inventory documentation:</p>
-          <div class="pill-group">
-            <span class="pill">Tanzania STG / NEMLIT</span>
-            <span class="pill">Drug Information References</span>
-            <span class="pill">Microsoft Excel</span>
-            <span class="pill">Microsoft Word</span>
-            <span class="pill">Microsoft PowerPoint</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WORK EXPERIENCE -->
-  <section id="experience">
-    <div class="container">
-      <div class="section-head">
-        <h2>Professional Experience</h2>
-        <p>Progressive responsibility across a regional referral hospital, an international humanitarian organization, a community pharmacy, and a district hospital.</p>
-      </div>
-
-      <div class="timeline">
-        <article class="role-card">
-          <div class="role-top">
-            <div class="role-title">Pharmaceutical Technician</div>
-            <div class="role-date">Aug 2022 – Present</div>
-          </div>
-          <div class="role-org">Sumbawanga Regional Referral Hospital (Ministry of Health) &bull; Sumbawanga, Tanzania</div>
-          <p class="role-summary">
-            Core member of the regional referral hospital pharmacy team managing high-volume outpatient and inpatient dispensing, main-to-dispensary supply flow, cold-chain compliance, and intern mentorship.
-          </p>
-          <ul class="role-bullets">
-            <li>Deliver safe dispensing and patient medication counselling to an average of <strong>~500 patients per week</strong> (~100 daily dispensations), including extemporaneous compounding for physician and laboratory orders.</li>
-            <li>Sustained <strong>over 97% commodity management accuracy</strong> verified through regular monthly internal supportive supervisions via disciplined stock counts, expiry surveillance, and SOP-compliant MSD receiving.</li>
-            <li>Maintain continuous cold-chain and storage-room temperature monitoring while inspecting medicines, medical consumables, chemicals, and cosmetics to preserve shelf life.</li>
-            <li>Mentored approximately <strong>40 pharmacy interns and junior personnel</strong> to date in prescription verification, dispensing accuracy, and inventory accountability.</li>
-          </ul>
-        </article>
-
-        <article class="role-card">
-          <div class="role-top">
-            <div class="role-title">Pharmaceutical Technician</div>
-            <div class="role-date">Apr 2021 – Aug 2022</div>
-          </div>
-          <div class="role-org">Medical Teams International &bull; Kasulu, Tanzania</div>
-          <p class="role-summary">
-            Supported humanitarian health programming in Kasulu by managing essential medicine supply planning, cold-chain storage, and therapeutic education for chronic and communicable disease patients.
-          </p>
-          <ul class="role-bullets">
-            <li>Calculated maximum Average Monthly Consumption (AMC) across medicines and medical supplies, placing timely central store orders and maintaining buffer levels to prevent stock-outs.</li>
-            <li>Dispensed prescriptions with complete labeling and delivered Patient Therapeutic Education (PTE) supporting patients managing HIV, TB, and infectious disease care.</li>
-            <li>Enforced strict cold-chain temperature logging, storage-room controls, and physical authorization checks to prevent medicine loss, contamination, or mix-ups.</li>
-          </ul>
-        </article>
-
-        <article class="role-card">
-          <div class="role-top">
-            <div class="role-title">Pharmacy Technician (Technical Manager)</div>
-            <div class="role-date">Dec 2019 – Mar 2021</div>
-          </div>
-          <div class="role-org">New Angaza Pharmacy &bull; Kahama, Tanzania</div>
-          <p class="role-summary">
-            Led daily retail and wholesale pharmacy operations as Technical Manager, overseeing staff workflow, procurement forecasting, patient consultations, and fiscal compliance.
-          </p>
-          <ul class="role-bullets">
-            <li>Supervised premises operations alongside <strong>1 pharmaceutical technician and 1 assistant</strong>, delegating daily responsibilities to keep dispensing accurate and organized.</li>
-            <li>Monitored consumption trends to prepare timely reorder lists for low-stock items, maintaining continuous availability of essential medicines.</li>
-            <li>Provided prescription and OTC counselling, referred acute cases for prompt medical review, reconciled computerized/manual registers, and issued EFD receipts.</li>
-          </ul>
-        </article>
-
-        <article class="role-card">
-          <div class="role-top">
-            <div class="role-title">Pharmacy Technician</div>
-            <div class="role-date">Oct 2018 – Sep 2019</div>
-          </div>
-          <div class="role-org">Murgwanza Council Designated Hospital &bull; Kagera, Tanzania</div>
-          <p class="role-summary">
-            Executed hospital dispensing, stock ledger documentation, monthly physical inventories, and health insurance claim submissions.
-          </p>
-          <ul class="role-bullets">
-            <li>Dispensed medicines and medical supplies against lawful prescriptions and logged transactions across manual registers and the Storage &amp; Sales Management computer system.</li>
-            <li>Documented incoming stock via bin cards, ledger books, Goods Received Notes (GRNs), and monthly physical counts, while compiling and submitting monthly online insurance claims.</li>
-          </ul>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- CREDENTIALS & TRAININGS -->
-  <section id="credentials">
-    <div class="container">
-      <div class="section-head">
-        <h2>Education, Licensure &amp; Professional Development</h2>
-        <p>Academic background, national regulatory standing, and specialized trainings in supply chain management and clinical safety.</p>
-      </div>
-
-      <div class="grid-2">
-        <div class="card">
-          <h3>Academic &amp; Regulatory Standing</h3>
-          <div class="cred-list">
-            <div class="cred-item">
-              <div class="cred-title">Diploma in Pharmaceutical Sciences</div>
-              <div class="cred-meta">St. Francis University College of Health and Allied Sciences &bull; Ifakara, Tanzania (2015 – 2019)</div>
-            </div>
-            <div class="cred-item">
-              <div class="cred-title">Pharmacy Council of Tanzania &mdash; Enrolled &amp; Licensed</div>
-              <div class="cred-meta">Authorized to practice as a Pharmaceutical Technician in Tanzania (registration numbers withheld for privacy).</div>
-            </div>
-            <div class="cred-item">
-              <div class="cred-title">Certificate of Secondary Education (O-Level)</div>
-              <div class="cred-meta">Mwilamvya Secondary School &bull; Kasulu, Tanzania (2010 – 2014)</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <h3>Workshops &amp; Specialized Certifications</h3>
-          <div class="cred-list">
-            <div class="cred-item">
-              <div class="cred-title">Hepatitis B: Transmission, Treatment, Lifestyle Modifications &amp; Prevention</div>
-              <div class="cred-meta">Pharmaceutical Society of Tanzania &bull; 2023</div>
-              <a class="cert-link" href="docs/hepatitis-b-pst-2023.pdf">View Certificate &rarr;</a>
-            </div>
-            <div class="cred-item">
-              <div class="cred-title">Field Inventory Management</div>
-              <div class="cred-meta">Save the Children &bull; 2022</div>
-              <a class="cert-link" href="docs/field-inventory-save-the-children-2022.pdf">View Certificate &rarr;</a>
-            </div>
-            <div class="cred-item">
-              <div class="cred-title">Supply Chain Management: Cutting Costs and Optimizing Delivery</div>
-              <div class="cred-meta">Humentum &bull; 2021</div>
-              <a class="cert-link" href="docs/supply-chain-humentum-2021.pdf">View Certificate &rarr;</a>
-            </div>
-            <div class="cred-item">
-              <div class="cred-title">Safety in Administering Drugs for Neglected Tropical Diseases</div>
-              <div class="cred-meta">World Health Organization (WHO) &bull; 2021</div>
-              <a class="cert-link" href="docs/ntd-safety-who-2021.pdf">View Certificate &rarr;</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Professional References Note (Replace with Quote Cards once Google Form endorsements arrive) -->
-      <div class="ref-banner" style="margin-top: 24px;">
+  <main id="main-content">
+    <!-- 1. ABOUT / HERO -->
+    <section id="about" class="hero">
+      <div class="container hero-grid">
         <div>
-          <div class="card-kicker" style="margin-bottom: 4px;">Professional References</div>
-          <p>Supervisor and colleague endorsements from Sumbawanga Regional Referral Hospital, Medical Teams International, and partner health programs are available upon request.</p>
-        </div>
-        <a href="#contact" class="btn btn-secondary">Request References</a>
-      </div>
-    </div>
-  </section>
+          <div class="eyebrow">Licensed Pharmaceutical Technician &bull; Tanzania</div>
+          <h1>Japhet John Ruzige</h1>
+          <p class="subtitle">
+            Pharmaceutical Technician improving medication safety and health supply-chain reliability across hospitals, pharmacies, and humanitarian programs.
+          </p>
+          <div class="affiliation">Sumbawanga Regional Referral Hospital, Ministry of Health &bull; Sumbawanga, Rukwa, Tanzania</div>
 
-  <!-- CONTACT -->
-  <section id="contact">
-    <div class="container">
-      <div class="section-head">
-        <h2>How to Get in Touch</h2>
-        <p>Available for hospital and clinical pharmacy opportunities, health supply chain programs, and professional collaborations.</p>
-      </div>
-
-      <div class="card">
-        <div class="contact-grid">
-          <div class="contact-box">
-            <div class="contact-label">Email</div>
-            <div class="contact-val"><a href="mailto:japhetruzige@gmail.com">japhetruzige@gmail.com</a></div>
+          <div class="hero-actions">
+            <a href="#experience" class="btn btn-primary">View Professional Experience</a>
+            <a href="Japhet_Ruzige_CV.pdf" class="btn btn-secondary" download>Request / Download CV</a>
+            <a href="#contact" class="btn btn-secondary">Contact Japhet</a>
           </div>
 
-          <div class="contact-box">
-            <div class="contact-label">Phone / WhatsApp</div>
-            <div class="contact-val"><a href="tel:+255742899424">+255 742 899 424</a></div>
-          </div>
-
-          <div class="contact-box">
-            <div class="contact-label">LinkedIn</div>
-            <div class="contact-val"><a href="https://www.linkedin.com/in/japhet-ruzige-559677131" target="_blank" rel="noopener noreferrer">linkedin.com/in/japhet-ruzige-559677131</a></div>
-          </div>
-
-          <div class="contact-box">
-            <div class="contact-label">Location</div>
-            <div class="contact-val">Sumbawanga, Rukwa, Tanzania</div>
+          <div class="metrics-bar">
+            <div class="metric-box">
+              <div class="metric-num">&gt;97%</div>
+              <div class="metric-label">Commodity accuracy in monthly internal audits</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num">~500/wk</div>
+              <div class="metric-label">Patients served safely at referral level</div>
+            </div>
+            <div class="metric-box">
+              <div class="metric-num">~40</div>
+              <div class="metric-label">Pharmacy interns &amp; junior staff mentored</div>
+            </div>
           </div>
         </div>
+
+        <div class="photo-frame">
+          <img src="photo.jpg" alt="Portrait of Japhet John Ruzige" onerror="this.style.display='none'; this.parentElement.innerHTML='<span>Upload <strong>photo.jpg</strong><br/>to display portrait</span>';" />
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- 2. PROFESSIONAL IMPACT & TOOLKIT -->
+    <section id="impact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Professional Impact &amp; Core Capabilities</h2>
+          <p>Combining safe clinical dispensing, disciplined health commodity logistics, cold-chain quality assurance, and workforce mentorship.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <div class="card-kicker">Clinical Pharmacy</div>
+            <h3>Safe Dispensing &amp; Therapeutic Counselling</h3>
+            <p>
+              Verify lawful prescriptions for clinical appropriateness, dosing accuracy, and shelf life; compound extemporaneous preparations; and deliver clear adherence counselling across outpatient, inpatient, and chronic care (CTC/ART/PEP/PrEP) clinics.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Supply Chain Reliability</div>
+            <h3>AMC Forecasting, eLMIS &amp; MSD Requisitions</h3>
+            <p>
+              Prevent stock-outs and minimize expiry wastage through Average Monthly Consumption (AMC) calculation, eLMIS reporting, timely Medical Stores Department (MSD) requisitions, strict FEFO/FIFO stock rotation, and controlled-medicine security.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Quality &amp; Capacity Building</div>
+            <h3>Cold-Chain Compliance, Pharmacovigilance &amp; Mentorship</h3>
+            <p>
+              Maintain continuous refrigerator and storage-room temperature monitoring, document pharmacovigilance reports, uphold infection prevention standards, and train pharmacy interns and junior staff in daily clinical and inventory routines.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card-kicker">Digital &amp; Clinical Toolkit</div>
+            <h3>Health Information Systems &amp; National Guidelines</h3>
+            <p>
+              Daily operational proficiency across hospital dispensing platforms, national logistics databases, and Tanzanian clinical protocols:
+            </p>
+            <div class="pill-group">
+              <span class="pill">AfyaeHMS</span>
+              <span class="pill">eLMIS</span>
+              <span class="pill">CTC2 Database</span>
+              <span class="pill">CTC Analytics</span>
+              <span class="pill">Tanzania STG / NEMLIT</span>
+              <span class="pill">Pharmacovigilance Forms</span>
+              <span class="pill">Microsoft Excel</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. CASE STUDIES -->
+    <section id="case-studies">
+      <div class="container">
+        <div class="section-head">
+          <h2>Applied Pharmacy &amp; Supply Chain Case Studies</h2>
+          <p>Practical examples of how structured inventory planning, cold-chain controls, and hands-on mentorship solve operational challenges.</p>
+        </div>
+
+        <div class="case-stack">
+          <article class="case-study">
+            <div class="card-kicker">Health Supply Chain</div>
+            <h3>Improving Medicine Availability Through Reliable AMC Stock Planning</h3>
+            <div class="case-study-grid">
+              <div class="case-col">
+                <h4>Challenge</h4>
+                <p>
+                  High patient demand across referral hospital and humanitarian clinic settings creates constant risk of sudden stock-outs or over-ordering slow-moving items when consumption shifts go untracked.
+                </p>
+              </div>
+              <div class="case-col">
+                <h4>Actions</h4>
+                <p>
+                  Calculated maximum Average Monthly Consumption (AMC) from dispensing logs, reconciled bin cards against eLMIS/LMIS balances, enforced strict FEFO/FIFO rotation, and submitted timely MSD and central-store requisitions.
+                </p>
+              </div>
+              <div class="case-col">
+                <h4>Result</h4>
+                <p>
+                  Sustained <strong>over 97% commodity management accuracy</strong> across monthly internal supportive supervisions while maintaining continuous buffer availability for essential and chronic-care medicines.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study">
+            <div class="card-kicker">Quality &amp; Patient Safety</div>
+            <h3>Strengthening Cold-Chain and Storage-Room Compliance</h3>
+            <div class="case-study-grid">
+              <div class="case-col">
+                <h4>Challenge</h4>
+                <p>
+                  Temperature excursions, improper stacking, or unmonitored shelf life can compromise potency for vaccines, biologics, laboratory reagents, and essential pharmaceuticals.
+                </p>
+              </div>
+              <div class="case-col">
+                <h4>Actions</h4>
+                <p>
+                  Enforced routine refrigerator and storage-room temperature logging, inspected incoming MSD and vendor deliveries against hospital SOPs, and segregated near-expiry or temperature-sensitive stock.
+                </p>
+              </div>
+              <div class="case-col">
+                <h4>Result</h4>
+                <p>
+                  Protected product potency and shelf life across high-turnover hospital and NGO stores with zero preventable cold-chain losses and full audit readiness during internal supervisions.
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <article class="case-study">
+            <div class="card-kicker">Workforce Capacity</div>
+            <h3>Onboarding &amp; Mentoring Pharmacy Interns for Dispensing Accuracy</h3>
+            <div class="case-study-grid">
+              <div class="case-col">
+                <h4>Challenge</h4>
+                <p>
+                  Newly arrived pharmacy interns and junior staff often face steep transitions when moving from classroom theory to high-volume dispensing (~100 daily items) and strict ledger reconciliation.
+                </p>
+              </div>
+              <div class="case-col">
+                <h4>Actions</h4>
+                <p>
+                  Established structured bench-side supervision covering lawful prescription verification, complete medication labeling, patient counselling checklists, and daily stock-card updates.
+                </p>
+              </div>
+              <div class="case-col">
+                <h4>Result</h4>
+                <p>
+                  Mentored approximately <strong>40 interns and junior personnel</strong> to date, strengthening team dispensing speed, documentation consistency, and adherence to patient safety standards.
+                </p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. EVIDENCE-BASED EXPERIENCE -->
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <h2>Professional Experience</h2>
+          <p>Evidence-based track record across regional referral care, humanitarian health logistics, retail pharmacy management, and district hospital practice.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="role-card">
+            <div class="role-top">
+              <h3 class="role-title">Pharmaceutical Technician</h3>
+              <span class="role-date">Aug 2022 – Present</span>
+            </div>
+            <div class="role-org">Sumbawanga Regional Referral Hospital (Ministry of Health) &bull; Sumbawanga, Tanzania</div>
+            <p class="role-context">
+              <strong>Context &amp; Scope:</strong> High-volume regional referral hospital pharmacy serving inpatient wards, outpatient clinics, and specialized care units—managing prescription dispensing, extemporaneous compounding, MSD stock receiving, cold-chain compliance, and intern supervision.
+            </p>
+            <ul class="role-bullets">
+              <li>
+                <strong>Outcome:</strong> Dispensed safely to approximately <strong>500 patients each week</strong> (~100 daily dispensations), including prescription verification, extemporaneous compounding, and patient counselling.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Maintained <strong>&gt;97% commodity management accuracy</strong> verified during monthly internal supportive supervisions through disciplined stock counts, expiry surveillance, and SOP-compliant receiving.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Mentored approximately <strong>40 interns and junior staff</strong> in dispensing accuracy, cold-chain monitoring, and inventory accountability.
+              </li>
+            </ul>
+            <div class="role-tools">
+              <strong>Tools &amp; Standards:</strong>
+              <span class="pill">AfyaeHMS</span>
+              <span class="pill">eLMIS</span>
+              <span class="pill">CTC2 &amp; CTC Analytics</span>
+              <span class="pill">Tanzania STG / NEMLIT</span>
+              <span class="pill">Pharmacovigilance Forms</span>
+            </div>
+          </article>
+
+          <article class="role-card">
+            <div class="role-top">
+              <h3 class="role-title">Pharmaceutical Technician</h3>
+              <span class="role-date">Apr 2021 – Aug 2022</span>
+            </div>
+            <div class="role-org">Medical Teams International &bull; Kasulu, Tanzania</div>
+            <p class="role-context">
+              <strong>Context &amp; Scope:</strong> Humanitarian health program in Kasulu—responsible for essential medicine supply planning, central store requisitions, cold-chain security, and Patient Therapeutic Education (PTE) for chronic and communicable care.
+            </p>
+            <ul class="role-bullets">
+              <li>
+                <strong>Outcome:</strong> Prevented stock-outs across essential medicines and medical supplies by calculating maximum Average Monthly Consumption (AMC) and maintaining buffer stock thresholds.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Improved patient adherence and medication understanding through structured, patient-centered therapeutic education for HIV, TB, and infectious disease patients.
+              </li>
+              <li>
+                <strong>Responsibility:</strong> Enforced complete prescription labeling, continuous cold-chain temperature logging, and strict physical security over controlled and general medical stores.
+              </li>
+            </ul>
+            <div class="role-tools">
+              <strong>Tools &amp; Standards:</strong>
+              <span class="pill">AMC Forecasting</span>
+              <span class="pill">LMIS / eLMIS</span>
+              <span class="pill">Cold-Chain Logs</span>
+              <span class="pill">Microsoft Excel</span>
+            </div>
+          </article>
+
+          <article class="role-card">
+            <div class="role-top">
+              <h3 class="role-title">Pharmacy Technician (Technical Manager)</h3>
+              <span class="role-date">Dec 2019 – Mar 2021</span>
+            </div>
+            <div class="role-org">New Angaza Pharmacy &bull; Kahama, Tanzania</div>
+            <p class="role-context">
+              <strong>Context &amp; Scope:</strong> Retail and wholesale community pharmacy—serving as Technical Manager overseeing daily premises operations, procurement forecasting, patient consultations, and fiscal compliance.
+            </p>
+            <ul class="role-bullets">
+              <li>
+                <strong>Outcome:</strong> Supervised daily pharmacy operations alongside <strong>1 pharmaceutical technician and 1 assistant</strong>, maintaining accurate dispensing logs and an organized, regulatory-compliant dispensary.
+              </li>
+              <li>
+                <strong>Outcome:</strong> Sustained uninterrupted medicine availability by tracking consumption trends and preparing timely low-stock wholesale and retail reorders.
+              </li>
+              <li>
+                <strong>Responsibility:</strong> Provided prescription and OTC counselling, referred acute cases for prompt clinical review, and reconciled computerized registers with EFD receipts.
+              </li>
+            </ul>
+            <div class="role-tools">
+              <strong>Tools &amp; Standards:</strong>
+              <span class="pill">Pharmacy Sales &amp; Stock Software</span>
+              <span class="pill">EFD Fiscal Systems</span>
+              <span class="pill">Tanzania STG / NEMLIT</span>
+            </div>
+          </article>
+
+          <article class="role-card">
+            <div class="role-top">
+              <h3 class="role-title">Pharmacy Technician</h3>
+              <span class="role-date">Oct 2018 – Sep 2019</span>
+            </div>
+            <div class="role-org">Murgwanza Council Designated Hospital &bull; Kagera, Tanzania</div>
+            <p class="role-context">
+              <strong>Context &amp; Scope:</strong> District-level hospital pharmacy—managing outpatient/inpatient dispensing, incoming stock documentation, physical inventories, and health insurance claim submissions.
+            </p>
+            <ul class="role-bullets">
+              <li>
+                <strong>Outcome:</strong> Reconciled incoming purchases and monthly physical stock counts across bin cards, ledger books, Goods Received Notes (GRNs), and computer records.
+              </li>
+              <li>
+                <strong>Responsibility:</strong> Dispensed medicines against lawful prescriptions and compiled accurate monthly online health insurance dispensing claims.
+              </li>
+            </ul>
+            <div class="role-tools">
+              <strong>Tools &amp; Standards:</strong>
+              <span class="pill">Storage &amp; Sales Management System</span>
+              <span class="pill">Bin Cards &amp; GRNs</span>
+              <span class="pill">Online Insurance Claims</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. CREDENTIALS, CERTIFICATIONS & ENDORSEMENTS -->
+    <section id="credentials">
+      <div class="container">
+        <div class="section-head">
+          <h2>Credentials, Licensure &amp; Endorsements</h2>
+          <p>Academic qualification, national regulatory standing, specialized certifications, and supervisor recommendations.</p>
+        </div>
+
+        <div class="grid-2">
+          <article class="card">
+            <h3>Education &amp; Regulatory Licensure</h3>
+            <div class="cred-list">
+              <div class="cred-item">
+                <div class="cred-title">Diploma in Pharmaceutical Sciences</div>
+                <div class="cred-meta">St. Francis University College of Health and Allied Sciences &bull; Ifakara, Tanzania (2015 – 2019)</div>
+              </div>
+              <div class="cred-item">
+                <div class="cred-title">Pharmacy Council of Tanzania &mdash; Enrolled &amp; Licensed</div>
+                <div class="cred-meta">Active professional licensure to practice as a Pharmaceutical Technician in Tanzania (registration details available upon verification).</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Specialized Training &amp; Certifications</h3>
+            <div class="cred-list">
+              <div class="cred-item">
+                <div class="cred-title">Hepatitis B: Transmission, Treatment, Lifestyle Modifications &amp; Prevention</div>
+                <div class="cred-meta">Pharmaceutical Society of Tanzania (PST) &bull; 2023</div>
+                <a class="cert-link" href="docs/hepatitis-b-pst-2023.pdf">View Certificate (PDF) &rarr;</a>
+              </div>
+              <div class="cred-item">
+                <div class="cred-title">Field Inventory Management</div>
+                <div class="cred-meta">Save the Children &bull; 2022</div>
+                <a class="cert-link" href="docs/field-inventory-save-the-children-2022.pdf">View Certificate (PDF) &rarr;</a>
+              </div>
+              <div class="cred-item">
+                <div class="cred-title">Supply Chain Management: Cutting Costs and Optimizing Delivery</div>
+                <div class="cred-meta">Humentum &bull; 2021</div>
+                <a class="cert-link" href="docs/supply-chain-humentum-2021.pdf">View Certificate (PDF) &rarr;</a>
+              </div>
+              <div class="cred-item">
+                <div class="cred-title">Safety in Administering Drugs for Neglected Tropical Diseases</div>
+                <div class="cred-meta">World Health Organization (WHO) &bull; 2021</div>
+                <a class="cert-link" href="docs/ntd-safety-who-2021.pdf">View Certificate (PDF) &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Supervisor Endorsement -->
+        <article class="endorsement-box">
+          <div class="card-kicker">Supervisor Endorsement</div>
+          <blockquote class="endorsement-quote">
+            &ldquo;I am pleased to recommend Japhet John Ruzige, whom I had the privilege of supervising during his time working as a Pharmaceutical Technician at Medical Teams International. During the period we worked together, he demonstrated a high level of professionalism, reliability, dedication, and commitment to his responsibilities. He consistently showed a strong work ethic, good pharmaceutical knowledge, and a genuine commitment to ensuring quality patient care and the safe, effective use of medicines. He worked well with colleagues and other healthcare professionals, demonstrated excellent teamwork and communication skills, and carried out his duties with integrity, accountability, and attention to detail.&rdquo;
+          </blockquote>
+          <div class="endorsement-meta">
+            <div class="endorsement-author">
+              <strong>John Rusabi</strong>
+              <span>Pharmacist, Medical Teams International</span>
+            </div>
+            <div class="endorsement-note">Additional supervisor references available on request</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- 6. CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact Japhet</h2>
+          <p>Reach out regarding hospital or clinical pharmacy roles, health supply-chain programs, CV/reference requests, or professional collaboration.</p>
+        </div>
+
+        <div class="card">
+          <div class="contact-grid">
+            <div class="contact-box">
+              <div class="contact-label">Email</div>
+              <div class="contact-val"><a href="mailto:japhetruzige@gmail.com">japhetruzige@gmail.com</a></div>
+            </div>
+
+            <div class="contact-box">
+              <div class="contact-label">Phone / WhatsApp</div>
+              <div class="contact-val"><a href="tel:+255742899424">+255 742 899 424</a></div>
+            </div>
+
+            <div class="contact-box">
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-val"><a href="https://www.linkedin.com/in/japhet-ruzige-559677131" target="_blank" rel="noopener noreferrer">linkedin.com/in/japhet-ruzige-559677131</a></div>
+            </div>
+
+            <div class="contact-box">
+              <div class="contact-label">Location</div>
+              <div class="contact-val">Sumbawanga, Rukwa, Tanzania</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <div class="container">
@@ -848,6 +1140,48 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Accessible mobile menu toggle
+    const menuToggle = document.querySelector(".menu-toggle");
+    const primaryNav = document.getElementById("primary-navigation");
+    const navLinks = primaryNav.querySelectorAll("a");
+
+    menuToggle.addEventListener("click", () => {
+      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+      menuToggle.setAttribute("aria-expanded", String(!expanded));
+      primaryNav.classList.toggle("is-open");
+    });
+
+    // Update active navigation link & close mobile menu on selection
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.forEach((l) => l.removeAttribute("aria-current"));
+        link.setAttribute("aria-current", "page");
+        primaryNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    // Highlight active section on scroll
+    const sections = document.querySelectorAll("main section[id]");
+    window.addEventListener("scroll", () => {
+      let currentId = "";
+      sections.forEach((sec) => {
+        const top = sec.offsetTop - 120;
+        if (window.scrollY >= top) {
+          currentId = sec.getAttribute("id");
+        }
+      });
+      if (currentId) {
+        navLinks.forEach((link) => {
+          if (link.getAttribute("href") === `#${currentId}`) {
+            link.setAttribute("aria-current", "page");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+    }, { passive: true });
   </script>
 </body>
 </html>
