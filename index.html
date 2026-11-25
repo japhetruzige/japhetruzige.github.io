@@ -450,31 +450,25 @@
       font-weight: 600;
     }
 
-    /* Recommendations */
-    .quote-card {
+    /* References Banner */
+    .ref-banner {
       display: flex;
-      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      gap: 18px;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--primary);
+      border-radius: var(--radius);
+      padding: 22px 26px;
+      box-shadow: var(--shadow-sm);
     }
 
-    blockquote {
-      font-size: 0.95rem;
+    .ref-banner p {
+      font-size: 0.96rem;
       color: var(--text-secondary);
-      font-style: italic;
-      border-left: 3px solid var(--primary);
-      padding-left: 14px;
-    }
-
-    .referee {
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    .referee strong {
-      display: block;
-      font-size: 0.95rem;
-      color: var(--text);
+      max-width: 680px;
     }
 
     /* Contact */
@@ -547,7 +541,6 @@
         <a href="#toolkit">Toolkit</a>
         <a href="#experience">Experience</a>
         <a href="#credentials">Credentials</a>
-        <a href="#recommendations">Recommendations</a>
         <a href="#contact">Get in Touch</a>
       </nav>
     </div>
@@ -801,47 +794,14 @@
           </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- RECOMMENDATIONS -->
-  <section id="recommendations">
-    <div class="container">
-      <div class="section-head">
-        <h2>Colleague &amp; Supervisor Endorsements</h2>
-        <p>Verified quotes from fellow pharmacy and supply chain professionals (to be updated with written colleague statements).</p>
-      </div>
-
-      <div class="grid-3">
-        <div class="card quote-card">
-          <blockquote>
-            "Endorsement pending written confirmation from Sweetbert Angelo regarding medicine requisition coordination, store management, and humanitarian supply reliability."
-          </blockquote>
-          <div class="referee">
-            <strong>Sweetbert Angelo</strong>
-            Pharmacist / Storekeeper, Medical Teams International (Kasulu)
-          </div>
+      <!-- Professional References Note (Replace with Quote Cards once Google Form endorsements arrive) -->
+      <div class="ref-banner" style="margin-top: 24px;">
+        <div>
+          <div class="card-kicker" style="margin-bottom: 4px;">Professional References</div>
+          <p>Supervisor and colleague endorsements from Sumbawanga Regional Referral Hospital, Medical Teams International, and partner health programs are available upon request.</p>
         </div>
-
-        <div class="card quote-card">
-          <blockquote>
-            "Endorsement pending written confirmation from John Edwin Rusabi regarding supply chain collaboration, inventory accuracy, and professional dependability."
-          </blockquote>
-          <div class="referee">
-            <strong>John Edwin Rusabi</strong>
-            Pharmacist &ndash; Supply Chain Management
-          </div>
-        </div>
-
-        <div class="card quote-card">
-          <blockquote>
-            "Endorsement pending written confirmation from Zimbwe Kauke Bakari regarding pharmaceutical standards, regulatory compliance, and professional conduct."
-          </blockquote>
-          <div class="referee">
-            <strong>Zimbwe Kauke Bakari</strong>
-            Pharmacist &ndash; Drug Registration Officer
-          </div>
-        </div>
+        <a href="#contact" class="btn btn-secondary">Request References</a>
       </div>
     </div>
   </section>
